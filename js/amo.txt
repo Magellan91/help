@@ -1,0 +1,20 @@
+var contact = location.href;
+				$('body').on('click','#call', function(){
+					console.log('msg send  ' + contact);
+					self.crm_post (
+						'https://nisa8020.xyz/site/transfer',
+						{
+							contact: contact
+						},
+						function(msg)
+						{
+							console.log('ans ' + msg);
+							$(location).attr('href','https://nisa8020.amocrm.ru/');
+						},
+						'json',
+						function()
+						{
+							alert ('Error');
+						}
+					);
+				});

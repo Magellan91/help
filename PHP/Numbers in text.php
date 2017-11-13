@@ -1,4 +1,3 @@
-<?php 
 public function getTextCost($num)
 	{
 
