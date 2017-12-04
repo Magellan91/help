@@ -1,0 +1,47 @@
+.heads
+{
+	padding:1em;
+	background:#08262c;
+	color:#fff;
+}
+
+.logo
+{
+	position:absolute;
+	right:2em;
+	top:1em;
+	width:5em;
+}
+
+.content
+{
+	padding:2em;
+	background:#f6f1ff;
+	height: 100%;
+}
+
+/*.form-group {*/
+/*margin-bottom: 0px!important;*/
+/*}*/
+.content-name
+{
+	margin-top:1em !important;
+	margin-bottom:1em !important;
+}
+.control-label{
+ box-shadow: none!important;
+ cursor: context-menu!important;
+ font-size: 1.1em!important;
+ background: none!important;
+}
+.control-label:hover{
+	background: none!important;
+}
+.form-group {
+	margin-bottom: 0px!important;
+}
+.btn-nisa{
+	color: #ffffff;
+	background-color: #337ab7;
+	border: 1px solid #22527b;
+}
