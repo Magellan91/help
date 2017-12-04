@@ -60,7 +60,7 @@ class Sovet extends \yii\db\ActiveRecord
 
 	public function setContactAmo($data,$manager){
 
-		$amo = new \AmoCRM\Client('domin', 'login', 'api');
+		$amo = new \AmoCRM\Client('domin', 'login', 'API');
 		$fordata=[];
     	foreach($data as $valu){
 			$contact = $amo->contact;

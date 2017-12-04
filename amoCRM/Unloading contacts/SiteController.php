@@ -56,6 +56,10 @@ class SiteController extends Controller
         ];
     }
 
+    public function setContact(){
+    	return new \AmoCRM\Client('domin', 'login', 'api');
+	}
+
     /**
      * Displays homepage.
      * Formation of the unloading form
@@ -70,15 +74,11 @@ class SiteController extends Controller
     	$model= new Sovet();
     	$cite=['Ачинск', 'Красноярск','Абакан'];
 		$data=$model->getCount($cite);
-		$amo = new \AmoCRM\Client('domain', 'login@gmail.com', 'api');
-		$manager=[];
+		$amo = $this->setContact();
 		foreach($amo->account->apiCurrent()['users'] as $user){
 			$manager[]=$user['name'];
 		}
 		array_pop ( $manager );
-
-
-
         return $this->render('index',['model'=>$model,'cite'=>$cite,'manager'=>$manager,'data'=>$data]);
     }
 
@@ -137,15 +137,19 @@ class SiteController extends Controller
 //     *
 //     * @return string
 //     */
+	/**
+	 * Inbound with index
+	 * Save action.
+	 * Unloading contacts
+	 * @return Response|string
+	 */
     public function actionSave()
     {
     	if(Yii::$app->request->post()){
 			$model= new Sovet();
 			$post=Yii::$app->request->post();
 			$cite=['Ачинск', 'Красноярск','Абакан'];
-			$amo = new \AmoCRM\Client('new58f5af28dcd74', 'kpksovet@gmail.com', '4703f1526a8e8df353f86d3e526e89ea');
-
-			$manager=[];
+			$amo = $this->setContact();
 			foreach($amo->account->apiCurrent()['users'] as $user){
 				$manager[]=$user['id'];
 			}
